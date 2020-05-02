@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.tute.center_server.dao.NodeMapper">
+    <!--注册-->
+    <insert id="putNode">
+    insert into `node` (nodeName, nodeLocation, nodeAbility, nodeCPUCore, nodeCPUFrequency, nodeRAM,nodeDisk,ip,runService)
+    values (#{nodeName},#{nodeLocation},#{nodeAbility},#{nodeCPUCore},#{nodeCPUFrequency},#{nodeRAM},#{nodeDisk},#{ip},#{runService})
+    </insert>
+
+    <!--列出所有node-->
+    <select id="listNode" resultType="edu.tute.center_server.Bean.Node">
+        select  * from  node
+    </select>
+
+    <!--删除Node-->
+    <delete id="delNode" >
+        delete  from  `node`  where nodeId = #{nodeId}
+    </delete>
+
+    <!--根据nodeName找Id-->
+    <select id="findIdbyName" resultType="java.lang.Integer">
+        select  nodeId from  `node` where  nodeName = #{nodeName}
+    </select>
+
+
+</mapper>

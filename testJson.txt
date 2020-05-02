@@ -1,0 +1,8 @@
+//加入集群
+{"service":"joinCluster","args":{"nodeId":"001","nodeName":"test111","nodeLocation":"tj","nodeAbility":"2500","nodeCPUCore":"2","nodeCPUFrequency":"3500","nodeRAM":"8","nodeAvailableROM":"40","innerIP":"192.168.56.3","outerIP":"192.168.56.3","runService":"0"}}
+//创建服务
+{"service":"createService","args":"ttt"}
+//上传文件
+{"service":"uploadFile","args":{"serviceId":"0319427347f641af817def764acc223e","path":"/home/ubuntu/0319427347f641af817def764acc223e"}}
+//寻找服务
+{"service":"execService","args":{"serviceId":"0319427347f641af817def764acc223e9","info":"data=xxx"}}

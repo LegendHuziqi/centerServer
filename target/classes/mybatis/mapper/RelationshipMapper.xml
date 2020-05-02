@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.tute.center_server.dao.RelationshipMapper">
+    <!--注册-->
+    <insert id="putRelationship">
+    insert into `relationship` (serviceId, nodeIp, nodeId)
+    values (#{serviceId},#{nodeIp},#{nodeId})
+    </insert>
+
+    <!--根据serviceId查找服务部署在了哪些节点-->
+    <select id="findInfobyServiceId" resultType="edu.tute.center_server.Bean.Relationship">
+        select  * from  relationship where serviceId = #{serviceId}
+    </select>
+
+
+
+</mapper>

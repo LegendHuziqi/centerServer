@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.tute.center_server.dao.NodeMapper">
+    <!--注册-->
+    <insert id="putUser">
+    insert into `user` (userName, password)
+    values (#{userName},#{password})
+    </insert>
+
+    <!--登录-->
+    <select id="getUser" resultType="edu.tute.center_server.Bean.User">
+        select  * from  `user` where userName = #{userName} and password = #{password}
+    </select>
+
+
+
+</mapper>

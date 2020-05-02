@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.tute.center_server.dao.ServiceMapper">
+    <!--写入service-->
+    <insert id="putService" useGeneratedKeys="true" keyProperty="serviceId" parameterType="edu.tute.center_server.pojo.devRequest.CreateServiceRequest">
+    insert into `service` (name, updater, createDate)
+    values (#{serviceName},#{serviceUpdater},#{serviceDate})
+    </insert>
+    <!--根据name和updater查serviceId-->
+    <select id="getId" resultType="java.lang.Integer">
+        select  Id from  service where updater = #{serviceUpdater} and name = #{serviceName}
+    </select>
+    <!--删service-->
+    <delete id="delService" >
+        delete from service where Id = #{serviceId}
+    </delete>
+    <!--根据userId列出service-->
+    <select id="listUserService" resultType="edu.tute.center_server.Bean.Service">
+        select * from service where updater = #{userId}
+    </select>
+</mapper>
